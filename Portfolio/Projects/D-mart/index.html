@@ -1,0 +1,2820 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DMart Ready - Home & Biscuits</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+
+    <style>
+        /* ================= RESET ================= */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f5f5;
+            color: #222;
+        }
+
+        button,
+        input,
+        select {
+            font: inherit;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* ================= HEADER ================= */
+
+        .top-header {
+            width: 100%;
+            min-height: 88px;
+            background: #fff;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-box {
+            width: 205px;
+            height: 88px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            background: #fff;
+        }
+
+        .logo-box img {
+            width: 170px;
+            max-height: 78px;
+            object-fit: contain;
+        }
+
+        .location-box {
+            width: 170px;
+            height: 88px;
+            background: #f1f5ff;
+            padding: 13px 12px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .location-box .pin {
+            color: #25a852;
+            font-size: 19px;
+            margin-right: 7px;
+        }
+
+        .location-box .loc-name {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .location-box .city {
+            display: block;
+            color: #777;
+            margin: 7px 0 0 29px;
+            font-size: 15px;
+        }
+
+        .delivery-box {
+            width: 285px;
+            height: 88px;
+            padding: 17px 10px;
+            flex-shrink: 0;
+        }
+
+        .delivery-box p {
+            font-size: 14px;
+            margin-bottom: 8px;
+            white-space: nowrap;
+        }
+
+        .delivery-box p span {
+            color: #25a852;
+            font-weight: 600;
+        }
+
+        .delivery-box h4 {
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        .delivery-box h4 i {
+            color: #ff9d00;
+            margin-right: 6px;
+            font-size: 17px;
+        }
+
+        .search-box {
+            height: 52px;
+            flex: 1;
+            min-width: 250px;
+            margin: 0 15px 0 5px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .search-box input {
+            flex: 1;
+            height: 48px;
+            border: 0;
+            outline: 0;
+            padding: 0 16px;
+            font-size: 16px;
+            min-width: 0;
+        }
+
+        .search-box button {
+            height: 52px;
+            width: 102px;
+            border: 0;
+            background: #25a852;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .search-box button:hover {
+            background: #1e9447;
+        }
+
+        .header-actions {
+            height: 88px;
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            padding: 0 18px 0 5px;
+            flex-shrink: 0;
+            white-space: nowrap;
+        }
+
+        .signin {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .signin i,
+        .bell i,
+        .cart i {
+            color: #25a852;
+            font-size: 23px;
+        }
+
+        .bell,
+        .cart {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .cart {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+        }
+
+        .cart-count {
+            position: absolute;
+            left: 13px;
+            top: -13px;
+            min-width: 20px;
+            height: 20px;
+            padding: 0 5px;
+            border-radius: 50%;
+            background: #f0df68;
+            font-size: 11px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cart-total {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+
+        /* ================= NAVBAR ================= */
+
+        .navbar {
+            height: 55px;
+            background: #fff;
+            border-bottom: 1px solid #ccc;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, .08);
+            display: flex;
+            align-items: center;
+            overflow-x: auto;
+        }
+
+        .all-categories {
+            width: 270px;
+            min-width: 270px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            padding-left: 22px;
+            border-right: 1px solid #ccc;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .all-categories i {
+            margin-right: 12px;
+            font-size: 19px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex: 1;
+            min-width: 850px;
+        }
+
+        .nav-links a {
+            padding: 18px 18px;
+            font-size: 15px;
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #25a852;
+        }
+
+
+        /* ================= PAGE ================= */
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+
+        /* ================= HOME BANNER ================= */
+
+        .home-banner {
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+            background: #ddd;
+            position: relative;
+        }
+
+        .banner-track {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            transition: transform .7s ease-in-out;
+        }
+
+        .banner-slide {
+            min-width: 100%;
+            width: 100%;
+            height: 100%;
+            flex: 0 0 100%;
+        }
+
+        .banner-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+
+        /* ================= CATEGORY ================= */
+
+        .category-section {
+            margin: 35px 32px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 30px;
+        }
+
+        .category-section h2 {
+            font-size: 20px;
+            margin-bottom: 22px;
+        }
+
+        .category-slider {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-track {
+            display: flex;
+            gap: 25px;
+            transition: transform .35s ease;
+        }
+
+        .category-card {
+            min-width: 130px;
+            flex: 0 0 130px;
+            text-align: center;
+        }
+
+        .category-img {
+            width: 120px;
+            height: 115px;
+            margin: auto;
+            border: 1px solid #eee;
+            border-radius: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+        }
+
+        .category-img img {
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+        }
+
+        .category-card p {
+            margin-top: 14px;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .slider-arrow {
+            position: absolute;
+            z-index: 5;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 42px;
+            height: 65px;
+            background: #fff;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, .15);
+            font-size: 28px;
+        }
+
+        .slider-arrow.left {
+            left: 0;
+        }
+
+        .slider-arrow.right {
+            right: 0;
+        }
+
+
+        /* ================= PRODUCT PAGE ================= */
+
+        .breadcrumb {
+            padding: 16px 20px 8px;
+            color: #888;
+            font-size: 14px;
+            background: #fff;
+        }
+
+        .breadcrumb span {
+            color: #777;
+        }
+
+        .product-layout {
+            display: flex;
+            max-width: 1900px;
+            margin: auto;
+            background: #f5f5f5;
+        }
+
+        .sidebar {
+            width: 255px;
+            min-width: 255px;
+            padding: 20px 0 60px;
+            background: #fff;
+            border-right: 1px solid #ddd;
+        }
+
+        .sidebar h3 {
+            padding: 0 23px 15px;
+            font-size: 16px;
+        }
+
+        .sidebar .active-cat {
+            padding: 14px 23px;
+            color: #25a852;
+            font-weight: 700;
+            background: #fafafa;
+        }
+
+        .sidebar .sub {
+            padding: 11px 33px;
+            font-size: 15px;
+            color: #555;
+            cursor: pointer;
+        }
+
+        .sidebar .sub:hover {
+            color: #25a852;
+        }
+
+        .sidebar .group {
+            border-top: 1px solid #ddd;
+            padding: 17px 23px;
+            font-size: 15px;
+            color: #555;
+            margin-top: 5px;
+        }
+
+        .products-main {
+            flex: 1;
+            min-width: 0;
+            padding: 20px;
+        }
+
+        .products-title {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+        }
+
+        .products-title h1 {
+            font-size: 28px;
+        }
+
+        .products-title span {
+            color: #999;
+            font-size: 16px;
+        }
+
+        .filters {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            flex-wrap: wrap;
+            margin: 25px 0 20px;
+        }
+
+        .filter {
+            border: 1px solid #25a852;
+            background: #fff;
+            border-radius: 5px;
+            padding: 9px 16px;
+            min-width: 105px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .sort {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            white-space: nowrap;
+        }
+
+        .sort select {
+            padding: 9px 14px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 10px;
+        }
+
+        .product-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            position: relative;
+            min-width: 0;
+        }
+
+        .badge {
+            position: absolute;
+            right: 13px;
+            top: 13px;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .badge span {
+            width: 9px;
+            height: 9px;
+            border: 2px solid #25a852;
+            border-radius: 2px;
+        }
+
+        .product-img {
+            height: 185px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 14px;
+        }
+
+        .product-img img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .product-name {
+            min-height: 55px;
+            line-height: 1.4;
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 8px;
+        }
+
+        .price-labels,
+        .price-values {
+            display: flex;
+            gap: 20px;
+        }
+
+        .price-labels {
+            color: #999;
+            font-size: 13px;
+            margin-bottom: 4px;
+        }
+
+        .mrp {
+            color: #999;
+            text-decoration: line-through;
+            font-size: 14px;
+        }
+
+        .dmart-price {
+            font-weight: bold;
+        }
+
+        .off {
+            background: #e5f7e9;
+            color: #25a852;
+            padding: 7px 10px;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 13px;
+            white-space: nowrap;
+        }
+
+        .tax {
+            color: #999;
+            font-size: 12px;
+            font-style: italic;
+            margin: 6px 0 12px;
+        }
+
+        .weight {
+            width: 100%;
+            padding: 9px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background: #fff;
+            margin-bottom: 12px;
+        }
+
+        .add-cart {
+            width: 100%;
+            padding: 12px;
+            border: 0;
+            border-radius: 4px;
+            background: #25a852;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .add-cart:hover {
+            background: #1e9447;
+        }
+
+        .stepper {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #25a852;
+            color: #fff;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .stepper button {
+            border: 0;
+            background: transparent;
+            color: #fff;
+            padding: 9px 18px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+
+        /* ================= LOCATION MODAL ================= */
+
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .45);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+        }
+
+        .overlay.open {
+            display: flex;
+        }
+
+        .location-modal {
+            width: 700px;
+            max-width: 92vw;
+            background: #fff;
+            border-radius: 7px;
+            overflow: hidden;
+        }
+
+        .modal-head {
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .modal-head h2 {
+            font-size: 24px;
+        }
+
+        .close-modal {
+            position: absolute;
+            right: 20px;
+            top: 17px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .location-search {
+            background: #f5f5f5;
+            padding: 20px 28px;
+        }
+
+        .location-search-box {
+            height: 52px;
+            display: flex;
+            background: #fff;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .location-search-box i {
+            padding: 13px 10px 0 15px;
+            color: #888;
+            font-size: 22px;
+        }
+
+        .location-search-box input {
+            flex: 1;
+            border: 0;
+            outline: 0;
+            padding: 0 10px;
+        }
+
+        .location-search-box button {
+            width: 102px;
+            border: 0;
+            background: #25a852;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .recent {
+            padding: 24px 28px;
+        }
+
+        .recent h4 {
+            color: #999;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .recent-place {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 22px;
+        }
+
+        .recent-place i {
+            color: #ccc;
+            font-size: 20px;
+        }
+
+        .recent-place h3 {
+            font-size: 17px;
+            margin-bottom: 5px;
+        }
+
+        .recent-place p {
+            color: #999;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+
+        /* ================= CART ================= */
+
+        .cart-drawer {
+            position: fixed;
+            top: 0;
+            right: -430px;
+            width: 410px;
+            max-width: 92vw;
+            height: 100vh;
+            background: #fff;
+            z-index: 120;
+            box-shadow: -4px 0 18px rgba(0, 0, 0, .2);
+            transition: right .25s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-drawer.open {
+            right: 0;
+        }
+
+        .cart-head {
+            padding: 18px 20px;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .cart-head button {
+            border: 0;
+            background: none;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        .cart-items {
+            flex: 1;
+            overflow: auto;
+            padding: 10px 20px;
+        }
+
+        .empty-cart {
+            text-align: center;
+            color: #999;
+            padding: 60px 10px;
+        }
+
+        .cart-item {
+            display: flex;
+            gap: 12px;
+            padding: 14px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .cart-thumb {
+            width: 60px;
+            height: 60px;
+            border: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cart-thumb img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .cart-info {
+            flex: 1;
+        }
+
+        .cart-name {
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        .cart-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .mini-stepper {
+            display: flex;
+            align-items: center;
+            border: 1px solid #25a852;
+            border-radius: 4px;
+        }
+
+        .mini-stepper button {
+            border: 0;
+            background: none;
+            color: #25a852;
+            font-weight: bold;
+            padding: 4px 9px;
+            cursor: pointer;
+        }
+
+        .cart-foot {
+            border-top: 1px solid #ddd;
+            padding: 16px 20px;
+        }
+
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            font-size: 17px;
+            margin: 8px 0 14px;
+        }
+
+        .checkout {
+            width: 100%;
+            padding: 13px;
+            border: 0;
+            border-radius: 4px;
+            background: #25a852;
+            color: #fff;
+            font-weight: bold;
+        }
+
+
+        /* ================= SIGN IN / REGISTER MODAL ================= */
+
+        .register-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .2s ease;
+            z-index: 200;
+        }
+
+        .register-overlay.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .register-modal {
+            background: #fff;
+            width: 380px;
+            max-width: 90vw;
+            border-radius: 8px;
+            padding: 28px 26px;
+            position: relative;
+            transform: translateY(-20px);
+            transition: transform .25s ease;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, .25);
+        }
+
+        .register-overlay.open .register-modal {
+            transform: translateY(0);
+        }
+
+        .close-register {
+            position: absolute;
+            top: 14px;
+            right: 16px;
+            background: none;
+            border: none;
+            font-size: 22px;
+            cursor: pointer;
+            color: #555;
+        }
+
+        .register-modal h2 {
+            margin: 0 0 5px;
+            font-size: 21px;
+        }
+
+        .register-modal .register-subtitle {
+            margin: 0 0 20px;
+            font-size: 13px;
+            color: #777;
+        }
+
+        .register-modal label {
+            display: block;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .register-modal input {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            margin-bottom: 15px;
+            outline: none;
+        }
+
+        .register-modal input:focus {
+            border-color: #25a852;
+        }
+
+        .register-btn {
+            width: 100%;
+            background: #25a852;
+            color: #fff;
+            border: none;
+            padding: 12px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .register-btn:hover {
+            background: #1e9447;
+        }
+
+        .switch-login {
+            text-align: center;
+            font-size: 13px;
+            margin-top: 15px;
+            color: #777;
+        }
+
+        .switch-login a {
+            color: #25a852;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+
+        /* ================= RESPONSIVE ================= */
+
+        @media(max-width:1200px) {
+
+            .logo-box {
+                width: 175px;
+            }
+
+            .location-box {
+                width: 145px;
+            }
+
+            .delivery-box {
+                width: 230px;
+            }
+
+            .header-actions {
+                gap: 15px;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .all-categories {
+                width: 220px;
+                min-width: 220px;
+            }
+        }
+
+
+        @media(max-width:900px) {
+
+            .delivery-box {
+                display: none;
+            }
+
+            .logo-box {
+                width: 165px;
+            }
+
+            .location-box {
+                width: 145px;
+            }
+
+            .header-actions {
+                gap: 12px;
+                padding-right: 10px;
+            }
+
+            .signin span {
+                display: none;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .sidebar {
+                width: 210px;
+                min-width: 210px;
+            }
+        }
+
+
+        @media(max-width:768px) {
+
+            .top-header {
+                flex-wrap: wrap;
+                height: auto;
+            }
+
+            .logo-box {
+                width: 150px;
+                height: 70px;
+            }
+
+            .location-box {
+                width: 145px;
+                height: 70px;
+            }
+
+            .header-actions {
+                height: 70px;
+                margin-left: auto;
+            }
+
+            .search-box {
+                order: 10;
+                flex-basis: 100%;
+                margin: 0 10px 10px;
+            }
+
+            .navbar {
+                height: 48px;
+            }
+
+            .all-categories {
+                height: 48px;
+                min-width: 150px;
+                width: 150px;
+                padding-left: 12px;
+            }
+
+            .nav-links {
+                min-width: 750px;
+            }
+
+            .home-banner {
+                height: 230px;
+            }
+
+            .category-section {
+                margin: 15px;
+                padding: 18px;
+            }
+
+            .product-layout {
+                display: block;
+            }
+
+            .sidebar {
+                display: none;
+            }
+
+            .products-main {
+                padding: 15px;
+            }
+
+            .filters {
+                gap: 8px;
+            }
+
+            .filter {
+                padding: 8px 11px;
+                min-width: auto;
+            }
+
+            .sort {
+                margin-left: 0;
+            }
+        }
+
+
+        @media(max-width:520px) {
+
+            .location-box {
+                display: none;
+            }
+
+            .header-actions {
+                padding-right: 8px;
+            }
+
+            .bell {
+                display: none;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .products-title h1 {
+                font-size: 23px;
+            }
+
+            .home-banner {
+                height: 190px;
+            }
+
+            .register-modal {
+                width: 92vw;
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="top-header">
+
+        <div class="logo-box">
+
+            <img src="image/logo.png" alt="DMART Ready">
+
+        </div>
+
+
+        <div class="location-box" id="locationBtn">
+
+            <div>
+
+                <i class="fa-solid fa-location-dot pin"></i>
+
+                <span class="loc-name">
+                    Andheri...
+                </span>
+
+                <i class="fa-solid fa-angle-down"></i>
+
+            </div>
+
+            <span class="city">
+                Mumbai
+            </span>
+
+        </div>
+
+
+        <div class="delivery-box">
+
+            <p>
+                Earliest
+                <span>Home Delivery</span>
+                available
+            </p>
+
+            <h4>
+
+                <i class="fa-regular fa-clock"></i>
+
+                Tomorrow 07:00 AM - 10:00 AM
+
+            </h4>
+
+        </div>
+
+
+        <div class="search-box">
+
+            <input id="mainSearch" type="search" placeholder="Search for Sugar">
+
+            <button>
+                SEARCH
+            </button>
+
+        </div>
+
+
+        <div class="header-actions">
+
+            <!-- SIGN IN / REGISTER -->
+
+            <div class="signin" id="signInBtn">
+
+                <i class="fa-regular fa-user"></i>
+
+                <span>
+                    Sign In / Register
+                </span>
+
+            </div>
+
+
+            <div class="bell">
+
+                <i class="fa-regular fa-bell"></i>
+
+            </div>
+
+
+            <div class="cart" id="cartBtn">
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                <span class="cart-count" id="cartCount">
+                    0
+                </span>
+
+                <span class="cart-total" id="cartTotal">
+                    ₹0
+                </span>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <div class="all-categories">
+
+            <i class="fa-solid fa-bars"></i>
+
+            <span>
+                All Categories
+            </span>
+
+        </div>
+
+
+        <div class="nav-links">
+
+            <a href="#" data-page="home" class="nav-home active">
+
+                DMart Grocery
+
+            </a>
+
+
+            <a href="#">
+                Ready To Cook
+            </a>
+
+
+            <a href="#">
+                Beverages
+            </a>
+
+
+            <a href="#" data-page="biscuits">
+
+                Biscuits &amp; Cookies
+
+            </a>
+
+
+            <a href="#">
+                Bath &amp; Body
+            </a>
+
+
+            <a href="#">
+                Detergent &amp; Fabric Care
+            </a>
+
+
+            <a href="#">
+                Cleaners
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ================= HOME PAGE ================= -->
+
+    <section class="page active" id="homePage">
+
+
+        <!-- ================= BANNER ================= -->
+
+        <div class="home-banner" id="homeBannerSlider">
+
+            <div class="banner-track" id="bannerTrack">
+
+
+                <div class="banner-slide">
+
+                    <img src="https://cdn.dmart.in/images/rwd/banners/hmpg/1oct24-crsl-dg-pune.jpg" alt="Daily Savings">
+
+                </div>
+
+
+                <div class="banner-slide">
+
+                    <img src="image/slide1.jpeg" alt="DMart Grocery">
+
+                </div>
+
+
+                <div class="banner-slide">
+
+                    <img src="image/slide2.jpeg" alt="DMart Offer">
+
+                </div>
+
+
+                <div class="banner-slide">
+
+                    <img src="image/slide3.webp" alt="DMart Offers">
+
+                </div>
+
+
+                <div class="banner-slide">
+
+                    <img src="image/slide4.webp" alt="DMart Collection">
+
+                </div>
+
+
+                <div class="banner-slide">
+
+                    <img src="image/slide5.jpg" alt="DMart Collection">
+
+                </div>
+
+
+                <div class="banner-slide">
+
+                    <img src="image/slide6.jpeg" alt="DMart Collection">
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= CATEGORY ================= -->
+
+        <div class="category-section">
+
+            <h2>
+                Popular Categories
+            </h2>
+
+
+            <div class="category-slider">
+
+
+                <button class="slider-arrow left" id="catLeft">
+
+                    &#10094;
+
+                </button>
+
+
+                <div class="category-track" id="categoryTrack">
+
+
+                    <div class="category-card">
+
+                        <div class="category-img">
+
+                            <img src="image/slider1.png">
+
+                        </div>
+
+                        <p>Dairy</p>
+
+                    </div>
+
+
+                    <div class="category-card">
+
+                        <div class="category-img">
+
+                            <img src="image/slider2.png">
+
+                        </div>
+
+                        <p>Tea</p>
+
+                    </div>
+
+
+                    <div class="category-card">
+
+                        <div class="category-img">
+
+                            <img src="image/slider3.png">
+
+                        </div>
+
+                        <p>Soft Drinks</p>
+
+                    </div>
+
+
+                    <div class="category-card">
+
+                        <div class="category-img">
+
+                            <img src="image/slider4.png">
+
+                        </div>
+
+                        <p>Cleaners</p>
+
+                    </div>
+
+
+                    <div class="category-card">
+
+                        <div class="category-img">
+
+                            <img src="image/slider5.png">
+
+                        </div>
+
+                        <p>Bath Soaps</p>
+
+                    </div>
+
+
+                    <div class="category-card">
+
+                        <div class="category-img">
+
+                            <img src="image/slider6.png">
+
+                        </div>
+
+                        <p>Toothpaste</p>
+
+                    </div>
+
+
+                    <div class="category-card">
+
+                        <div class="category-img">
+
+                            <img src="image/slider7.png">
+
+                        </div>
+
+                        <p>Shampoos</p>
+
+                    </div>
+
+
+                    <div class="category-card">
+
+                        <div class="category-img">
+
+                            <img src="image/slider8.png">
+
+                        </div>
+
+                        <p>Pooja Needs</p>
+
+                    </div>
+
+
+                    <div class="category-card">
+
+                        <div class="category-img">
+
+                            <img src="image/slider9.png">
+
+                        </div>
+
+                        <p>Towels</p>
+
+                    </div>
+
+
+                    <div class="category-card">
+
+                        <div class="category-img">
+
+                            <img src="image/slider10.png">
+
+                        </div>
+
+                        <p>Bath Utility</p>
+
+                    </div>
+
+
+                </div>
+
+
+                <button class="slider-arrow right" id="catRight">
+
+                    &#10095;
+
+                </button>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= BISCUITS PAGE ================= -->
+
+    <section class="page" id="biscuitsPage">
+
+
+        <div class="breadcrumb">
+
+            Home &nbsp;&gt;&nbsp;
+            Packaged Food &nbsp;&gt;&nbsp;
+
+            <span>
+                Biscuits &amp; Cookies
+            </span>
+
+        </div>
+
+
+        <div class="product-layout">
+
+
+            <aside class="sidebar">
+
+                <h3>
+                    Packaged Food
+                </h3>
+
+
+                <div class="active-cat">
+                    Biscuits &amp; Cookies (139)
+                </div>
+
+
+                <div class="sub">
+                    Cream Biscuits
+                </div>
+
+                <div class="sub">
+                    Cookies
+                </div>
+
+                <div class="sub">
+                    Glucose Biscuits
+                </div>
+
+                <div class="sub">
+                    Salty Biscuits
+                </div>
+
+                <div class="sub">
+                    Marie Biscuits
+                </div>
+
+                <div class="sub">
+                    Digestive Biscuits
+                </div>
+
+                <div class="sub">
+                    Khari &amp; Toasts
+                </div>
+
+                <div class="sub">
+                    Biscuits
+                </div>
+
+                <div class="sub">
+                    Wafer Biscuits
+                </div>
+
+                <div class="sub">
+                    Health Biscuits
+                </div>
+
+
+                <div class="group">
+                    Snacks &amp; Farsans (256)
+                </div>
+
+                <div class="group">
+                    Chocolates &amp; Candies (133)
+                </div>
+
+                <div class="group">
+                    Sweets (40)
+                </div>
+
+            </aside>
+
+
+            <main class="products-main">
+
+
+                <div class="products-title">
+
+                    <h1>
+                        Biscuits &amp; Cookies
+                    </h1>
+
+                    <span>
+                        139 products
+                    </span>
+
+                </div>
+
+
+                <div class="filters">
+
+
+                    <div class="filter">
+                        Brand
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+
+
+                    <div class="filter">
+                        Category
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+
+
+                    <div class="filter">
+                        Type
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+
+
+                    <div class="filter">
+                        Flavours
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+
+
+                    <div class="filter">
+                        Properties
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+
+
+                    <div class="filter">
+                        Weight
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+
+
+                    <div class="filter">
+                        Country Of Origin
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+
+
+                    <div class="sort">
+
+                        <span>
+                            Sort by:
+                        </span>
+
+                        <select id="sortSelect">
+
+                            <option value="relevance">
+                                Relevance
+                            </option>
+
+                            <option value="low">
+                                Price: Low to High
+                            </option>
+
+                            <option value="high">
+                                Price: High to Low
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="product-grid" id="productGrid">
+                </div>
+
+
+            </main>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= LOCATION MODAL ================= -->
+
+    <div class="overlay" id="locationOverlay">
+
+
+        <div class="location-modal">
+
+
+            <div class="modal-head">
+
+                <h2>
+                    Choose delivery location
+                </h2>
+
+
+                <span class="close-modal" id="closeLocation">
+
+                    &times;
+
+                </span>
+
+            </div>
+
+
+            <div class="location-search">
+
+                <div class="location-search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input type="search" placeholder="Search for area or location">
+
+
+                    <button>
+                        SEARCH
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="recent">
+
+                <h4>
+                    RECENT SEARCH
+                </h4>
+
+
+                <div class="recent-place">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <div>
+
+                        <h3>
+                            Andheri
+                        </h3>
+
+                        <p>
+                            Mumbai, Maharashtra, India
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="recent-place">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <div>
+
+                        <h3>
+                            PUNE RAILWAY STATION
+                        </h3>
+
+                        <p>
+                            Pune Railway Station Road,
+                            Agarkar Nagar,<br>
+                            Pune, Maharashtra, India
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= CART OVERLAY ================= -->
+
+    <div class="overlay" id="cartOverlay">
+    </div>
+
+
+    <!-- ================= CART ================= -->
+
+    <aside class="cart-drawer" id="cartDrawer">
+
+
+        <div class="cart-head">
+
+            <h2>
+                My Cart
+            </h2>
+
+            <button id="closeCart">
+                &times;
+            </button>
+
+        </div>
+
+
+        <div class="cart-items" id="cartItems">
+        </div>
+
+
+        <div class="cart-foot">
+
+            <div class="total-row">
+
+                <span>
+                    Total
+                </span>
+
+                <span id="cartGrandTotal">
+                    ₹0
+                </span>
+
+            </div>
+
+
+            <button class="checkout">
+                PROCEED TO CHECKOUT
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= SIGN IN / REGISTER MODAL ================= -->
+
+    <div class="register-overlay" id="registerOverlay">
+
+
+        <div class="register-modal">
+
+
+            <button class="close-register" id="closeRegister">
+
+                &times;
+
+            </button>
+
+
+            <h2>
+                Create your account
+            </h2>
+
+
+            <p class="register-subtitle">
+                Sign up to start shopping on DMart Ready
+            </p>
+
+
+            <form id="registerForm">
+
+
+                <label>
+                    Full Name
+                </label>
+
+                <input type="text" placeholder="Enter your name" required>
+
+
+                <label>
+                    Mobile Number
+                </label>
+
+                <input type="tel" placeholder="Enter mobile number" required>
+
+
+                <label>
+                    Email
+                </label>
+
+                <input type="email" placeholder="Enter email address" required>
+
+
+                <label>
+                    Password
+                </label>
+
+                <input type="password" placeholder="Create a password" required>
+
+
+                <button type="submit" class="register-btn">
+
+                    REGISTER
+
+                </button>
+
+            </form>
+
+
+            <div class="switch-login">
+
+                Already have an account?
+
+                <a href="#" id="signInLink">
+                    Sign In
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+
+        /* ================= PAGE SWITCHING ================= */
+
+        const homePage =
+            document.getElementById("homePage");
+
+        const biscuitsPage =
+            document.getElementById("biscuitsPage");
+
+
+        document
+            .querySelectorAll(".nav-links a[data-page]")
+            .forEach(link => {
+
+                link.addEventListener("click", e => {
+
+                    e.preventDefault();
+
+
+                    document
+                        .querySelectorAll(".nav-links a")
+                        .forEach(a =>
+                            a.classList.remove("active")
+                        );
+
+
+                    link.classList.add("active");
+
+
+                    if (link.dataset.page === "biscuits") {
+
+                        homePage.classList.remove("active");
+
+                        biscuitsPage.classList.add("active");
+
+                        window.scrollTo({
+                            top: 0,
+                            behavior: "smooth"
+                        });
+
+                    }
+                    else {
+
+                        biscuitsPage.classList.remove("active");
+
+                        homePage.classList.add("active");
+
+                        window.scrollTo({
+                            top: 0,
+                            behavior: "smooth"
+                        });
+
+                    }
+
+                });
+
+            });
+
+
+        /* ================= LOCATION ================= */
+
+        const locationOverlay =
+            document.getElementById("locationOverlay");
+
+
+        document.getElementById("locationBtn").onclick =
+            () => {
+
+                locationOverlay.classList.add("open");
+
+            };
+
+
+        document.getElementById("closeLocation").onclick =
+            () => {
+
+                locationOverlay.classList.remove("open");
+
+            };
+
+
+        locationOverlay.onclick = e => {
+
+            if (e.target === locationOverlay) {
+
+                locationOverlay.classList.remove("open");
+
+            }
+
+        };
+
+
+        /* ================= HOME BANNER SLIDER ================= */
+
+        const bannerTrack =
+            document.getElementById("bannerTrack");
+
+        const bannerSlides =
+            document.querySelectorAll(".banner-slide");
+
+        let bannerIndex = 0;
+
+
+        function changeBanner() {
+
+            bannerIndex++;
+
+
+            if (bannerIndex < bannerSlides.length) {
+
+                bannerTrack.style.transform =
+                    "translateX(-" +
+                    (bannerIndex * 100) +
+                    "%)";
+
+            }
+
+            else {
+
+                /*
+                Last image ke baad reverse animation
+                nahi dikhegi.
+                */
+
+                bannerTrack.style.transition = "none";
+
+                bannerIndex = 0;
+
+                bannerTrack.style.transform =
+                    "translateX(0)";
+
+
+                setTimeout(() => {
+
+                    bannerTrack.style.transition =
+                        "transform .7s ease-in-out";
+
+                }, 50);
+
+            }
+
+        }
+
+
+        setInterval(changeBanner, 2000);
+
+
+        /* ================= CATEGORY SLIDER ================= */
+
+        const categoryTrack =
+            document.getElementById("categoryTrack");
+
+        let categoryPosition = 0;
+
+
+        function moveCategories(direction) {
+
+            const card =
+                document.querySelector(".category-card");
+
+
+            if (!card) return;
+
+
+            const step =
+                card.offsetWidth + 25;
+
+
+            const visible =
+                Math.max(
+                    1,
+                    Math.floor(
+                        document
+                            .querySelector(".category-slider")
+                            .clientWidth / step
+                    )
+                );
+
+
+            const max =
+                Math.max(
+                    0,
+                    document.querySelectorAll(".category-card").length
+                    - visible
+                );
+
+
+            categoryPosition += direction;
+
+
+            categoryPosition =
+                Math.max(
+                    0,
+                    Math.min(
+                        categoryPosition,
+                        max
+                    )
+                );
+
+
+            categoryTrack.style.transform =
+                "translateX(-" +
+                (categoryPosition * step) +
+                "px)";
+
+        }
+
+
+        document.getElementById("catLeft").onclick =
+            () => moveCategories(-1);
+
+
+        document.getElementById("catRight").onclick =
+            () => moveCategories(1);
+
+
+        /* ================= SEARCH PLACEHOLDER ================= */
+
+        const searchItems = [
+
+            "Sugar",
+            "Ghee",
+            "Milk",
+            "Agarbatti",
+            "Sweets",
+            "Snacks"
+
+        ];
+
+        let searchIndex = 0;
+
+
+        setInterval(() => {
+
+            searchIndex =
+                (searchIndex + 1) %
+                searchItems.length;
+
+
+            document.getElementById("mainSearch").placeholder =
+                "Search for " +
+                searchItems[searchIndex];
+
+        }, 2000);
+
+
+        /* ================= PRODUCTS ================= */
+
+        const products = [
+
+            {
+                id: 1,
+                name: "Britannia Vita Marie Gold Biscuits : 900 g",
+                weight: "900 g",
+                mrp: 160,
+                price: 140,
+                off: 20,
+                img: "https://cdn.dmart.in/images/products/AUG120003982xx17AUG26_5_P.jpg"
+            },
+
+            {
+                id: 2,
+                name: "Sunfeast Dark Fantasy Choco Fills Cookies : 460 g",
+                weight: "460 g",
+                mrp: 370,
+                price: 185,
+                off: 185,
+                img: "https://cdn.dmart.in/images/products/JUL120006896xx21JUL26vvG460g_5_P.jpg"
+            },
+
+            {
+                id: 3,
+                name: "Britannia Good Day Cashew Cookies : 526 g",
+                weight: "526 g",
+                mrp: 130,
+                price: 77,
+                off: 53,
+                img: "https://cdn.dmart.in/images/products/MAR120000521xx11MAR26vvG_4_P.jpg"
+            },
+
+            {
+                id: 4,
+                name: "Bisky Bites Cashew Cookies : 600 g",
+                weight: "600 g",
+                mrp: 107,
+                price: 79,
+                off: 28,
+                img: "https://cdn.dmart.in/images/products/AUG120006936xx17AUG26_5_P.jpg"
+            },
+
+            {
+                id: 5,
+                name: "Britannia Nutrichoice Digestive Hi-Fibre : 900 g",
+                weight: "900 g",
+                mrp: 160,
+                price: 131,
+                off: 29,
+                img: "https://cdn.dmart.in/images/products/FEB120001040xx4FEB25_4_P.jpg"
+            },
+
+            {
+                id: 6,
+                name: "Britannia Bourbon Biscuits : 150 g",
+                weight: "150 g",
+                mrp: 45,
+                price: 40,
+                off: 5,
+                img: "https://cdn.dmart.in/images/products/AUG120003982xx17AUG26_5_P.jpg"
+            },
+
+            {
+                id: 7,
+                name: "Good Day Butter Cookies : 200 g",
+                weight: "200 g",
+                mrp: 70,
+                price: 62,
+                off: 8,
+                img: "https://cdn.dmart.in/images/products/MAR120000521xx11MAR26vvG_4_P.jpg"
+            },
+
+            {
+                id: 8,
+                name: "Marie Gold Biscuits : 250 g",
+                weight: "250 g",
+                mrp: 40,
+                price: 36,
+                off: 4,
+                img: "https://cdn.dmart.in/images/products/AUG120006936xx17AUG26_5_P.jpg"
+            }
+
+        ];
+
+
+        let cart = {};
+
+
+        /* ================= MONEY ================= */
+
+        function money(n) {
+
+            return "₹" +
+                Number(n).toLocaleString("en-IN");
+
+        }
+
+
+        /* ================= RENDER PRODUCTS ================= */
+
+        function renderProducts(list = products) {
+
+            const grid =
+                document.getElementById("productGrid");
+
+
+            grid.innerHTML = list.map(p => `
+
+        <div class="product-card">
+
+            <div class="badge">
+                <span></span>
+            </div>
+
+
+            <div class="product-img">
+
+                <img
+                src="${p.img}"
+                alt="${p.name}">
+
+            </div>
+
+
+            <div class="product-name">
+                ${p.name}
+            </div>
+
+
+            <div class="price-row">
+
+                <div>
+
+                    <div class="price-labels">
+
+                        <span>
+                            MRP
+                        </span>
+
+                        <span>
+                            DMart
+                        </span>
+
+                    </div>
+
+
+                    <div class="price-values">
+
+                        <span class="mrp">
+                            ${money(p.mrp)}
+                        </span>
+
+                        <span class="dmart-price">
+                            ${money(p.price)}
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="off">
+
+                    ${money(p.off)}
+                    <br>
+                    OFF
+
+                </div>
+
+            </div>
+
+
+            <div class="tax">
+                (Inclusive of all taxes)
+            </div>
+
+
+            <select class="weight">
+
+                <option>
+                    ${p.weight}
+                </option>
+
+            </select>
+
+
+            <div id="cta-${p.id}"></div>
+
+        </div>
+
+    `).join("");
+
+
+            list.forEach(p => {
+
+                renderCTA(p.id);
+
+            });
+
+        }
+
+
+        /* ================= PRODUCT BUTTON ================= */
+
+        function renderCTA(id) {
+
+            const holder =
+                document.getElementById("cta-" + id);
+
+
+            if (!holder) return;
+
+
+            const qty =
+                cart[id] || 0;
+
+
+            if (qty === 0) {
+
+                holder.innerHTML = `
+
+            <button
+            class="add-cart"
+            onclick="addToCart(${id})">
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                ADD TO CART
+
+            </button>
+
+        `;
+
+            }
+
+            else {
+
+                holder.innerHTML = `
+
+            <div class="stepper">
+
+                <button
+                onclick="changeQty(${id},-1)">
+                    −
+                </button>
+
+                <span>
+                    ${qty}
+                </span>
+
+                <button
+                onclick="changeQty(${id},1)">
+                    +
+                </button>
+
+            </div>
+
+        `;
+
+            }
+
+        }
+
+
+        /* ================= ADD CART ================= */
+
+        function addToCart(id) {
+
+            cart[id] =
+                (cart[id] || 0) + 1;
+
+
+            renderCTA(id);
+
+            renderCart();
+
+        }
+
+
+        /* ================= CHANGE QUANTITY ================= */
+
+        function changeQty(id, delta) {
+
+            cart[id] =
+                (cart[id] || 0) + delta;
+
+
+            if (cart[id] <= 0) {
+
+                delete cart[id];
+
+            }
+
+
+            renderCTA(id);
+
+            renderCart();
+
+        }
+
+
+        /* ================= RENDER CART ================= */
+
+        function renderCart() {
+
+            const ids =
+                Object.keys(cart);
+
+
+            const cartItems =
+                document.getElementById("cartItems");
+
+
+            let total = 0;
+
+            let count = 0;
+
+
+            if (ids.length === 0) {
+
+                cartItems.innerHTML = `
+
+            <div class="empty-cart">
+
+                Your cart is empty.
+
+                <br>
+
+                Add some tasty biscuits &amp; cookies!
+
+            </div>
+
+        `;
+
+            }
+
+            else {
+
+                cartItems.innerHTML = ids.map(id => {
+
+                    const p =
+                        products.find(
+                            x => x.id == id
+                        );
+
+
+                    const qty =
+                        cart[id];
+
+
+                    total +=
+                        p.price * qty;
+
+
+                    count += qty;
+
+
+                    return `
+
+                <div class="cart-item">
+
+                    <div class="cart-thumb">
+
+                        <img
+                        src="${p.img}"
+                        alt="">
+
+                    </div>
+
+
+                    <div class="cart-info">
+
+                        <div class="cart-name">
+                            ${p.name}
+                        </div>
+
+
+                        <div class="cart-row">
+
+                            <div class="mini-stepper">
+
+                                <button
+                                onclick="changeQty(${p.id},-1)">
+                                    −
+                                </button>
+
+                                <span>
+                                    ${qty}
+                                </span>
+
+                                <button
+                                onclick="changeQty(${p.id},1)">
+                                    +
+                                </button>
+
+                            </div>
+
+
+                            <strong>
+                                ${money(p.price * qty)}
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            `;
+
+                }).join("");
+
+            }
+
+
+            document.getElementById("cartCount").textContent =
+                count;
+
+
+            document.getElementById("cartTotal").textContent =
+                money(total);
+
+
+            document.getElementById("cartGrandTotal").textContent =
+                money(total);
+
+        }
+
+
+        /* ================= SORT ================= */
+
+        document
+            .getElementById("sortSelect")
+            .addEventListener("change", function () {
+
+                let list =
+                    [...products];
+
+
+                if (this.value === "low") {
+
+                    list.sort(
+                        (a, b) =>
+                            a.price - b.price
+                    );
+
+                }
+
+                else if (this.value === "high") {
+
+                    list.sort(
+                        (a, b) =>
+                            b.price - a.price
+                    );
+
+                }
+
+
+                renderProducts(list);
+
+            });
+
+
+        /* ================= CART DRAWER ================= */
+
+        const cartDrawer =
+            document.getElementById("cartDrawer");
+
+        const cartOverlay =
+            document.getElementById("cartOverlay");
+
+
+        document.getElementById("cartBtn").onclick =
+            () => {
+
+                cartDrawer.classList.add("open");
+
+                cartOverlay.classList.add("open");
+
+            };
+
+
+        document.getElementById("closeCart").onclick =
+            closeCart;
+
+
+        cartOverlay.onclick =
+            closeCart;
+
+
+        function closeCart() {
+
+            cartDrawer.classList.remove("open");
+
+            cartOverlay.classList.remove("open");
+
+        }
+
+
+        /* ================= SIGN IN / REGISTER ================= */
+
+        const registerOverlay =
+            document.getElementById("registerOverlay");
+
+
+        const signInBtn =
+            document.getElementById("signInBtn");
+
+
+        const closeRegister =
+            document.getElementById("closeRegister");
+
+
+        /* Sign In / Register par click */
+
+        signInBtn.onclick = () => {
+
+            registerOverlay.classList.add("open");
+
+        };
+
+
+        /* Close button */
+
+        closeRegister.onclick = () => {
+
+            registerOverlay.classList.remove("open");
+
+        };
+
+
+        /* Modal ke bahar click karne par close */
+
+        registerOverlay.onclick = (e) => {
+
+            if (e.target === registerOverlay) {
+
+                registerOverlay.classList.remove("open");
+
+            }
+
+        };
+
+
+        /* Register Form */
+
+        document.getElementById("registerForm").onsubmit =
+            (e) => {
+
+                e.preventDefault();
+
+                alert("Registered successfully!");
+
+                registerOverlay.classList.remove("open");
+
+            };
+
+
+        /* Sign In link */
+
+        document.getElementById("signInLink").onclick =
+            (e) => {
+
+                e.preventDefault();
+
+                alert("Sign In option clicked!");
+
+            };
+
+
+        /* ================= INITIALIZE ================= */
+
+        renderProducts();
+
+        renderCart();
+
+    </script>
+
+</body>
+
+</html>

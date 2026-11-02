@@ -1,0 +1,405 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Purva Patil - Web Developer Portfolio">
+    <title>Portfolio</title>
+
+    <link rel="stylesheet" href="./index.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="header">
+        <a href="#home" class="logo">Purva <span>Patil</span></a>
+
+        <button class="menu-toggle" id="menu-toggle"
+                type="button" aria-label="Toggle navigation"
+                aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <nav class="navbar" id="navbar">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#education" class="nav-link">Education</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- HOME -->
+        <section class="home section" id="home">
+
+            <div class="home-content">
+                <p class="eyebrow">WELCOME TO MY PORTFOLIO</p>
+
+                <h1>Hi, I'm a <span class="typing-text">Developer</span></h1>
+
+                <p>
+                    I build responsive websites using HTML, CSS and JavaScript.
+                    I enjoy learning new technologies and creating practical projects.
+                </p>
+
+                <div class="home-buttons">
+                    <a href="#projects" class="btn">Explore Projects</a>
+
+                    <a href="#contact" class="btn btn-outline">
+                        Contact Me
+                    </a>
+
+                    <a href="./resume.pdf"
+                       class="btn"
+                       download="Purva-Patil-Resume.pdf">
+                        <i class="fa-solid fa-download"></i>
+                        Download Resume
+                    </a>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://github.com/YOUR_GITHUB_USERNAME"
+                       class="social-link"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/YOUR_LINKEDIN_USERNAME/"
+                       class="social-link"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- HOME IMAGE -->
+            <div class="home-visual">
+                <img src="./img/logo.png"
+                     alt="Purva Patil portfolio graphic"
+                     class="hero-image">
+            </div>
+
+        </section>
+
+        <!-- ABOUT -->
+        <section class="about section" id="about">
+
+            <div class="section-heading">
+                <p>GET TO KNOW ME</p>
+                <h2>About <span>Me</span></h2>
+            </div>
+
+            <div class="about-content">
+
+                <!-- YOUR PROFILE PHOTO -->
+                <div class="about-photo-box">
+                    <img src="./img/pic.png"
+                         alt="Purva Patil Profile Photo"
+                         class="about-photo">
+                </div>
+
+                <div class="about-text">
+                    <h3>Web Developer &amp; Programmer</h3>
+
+                    <p>
+                        I have completed my BCA and am learning Python Full Stack
+                        Development. I enjoy designing websites, solving problems
+                        and improving my programming skills.
+                    </p>
+
+                    <p>
+                        My goal is to build useful web applications and grow
+                        as a software developer.
+                    </p>
+
+                    <a href="#contact" class="btn">
+                        Let's Connect
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="skills section" id="skills">
+
+            <div class="section-heading">
+                <p>WHAT I WORK WITH</p>
+                <h2>My <span>Skills</span></h2>
+            </div>
+
+            <div class="skills-grid">
+
+                <article class="skill-card">
+                    <i class="fa-brands fa-html5"></i>
+                    <h3>HTML5</h3>
+                    <p>Web page structure</p>
+                </article>
+
+                <article class="skill-card">
+                    <i class="fa-brands fa-css3-alt"></i>
+                    <h3>CSS3</h3>
+                    <p>Styling and responsive design</p>
+                </article>
+
+                <article class="skill-card">
+                    <i class="fa-brands fa-js"></i>
+                    <h3>JavaScript</h3>
+                    <p>Interactive web pages</p>
+                </article>
+
+                <article class="skill-card">
+                    <i class="fa-brands fa-python"></i>
+                    <h3>Python</h3>
+                    <p>Programming fundamentals</p>
+                </article>
+
+                <article class="skill-card">
+                    <i class="fa-solid fa-database"></i>
+                    <h3>MySQL</h3>
+                    <p>Database fundamentals</p>
+                </article>
+
+                <article class="skill-card">
+                    <i class="fa-brands fa-git-alt"></i>
+                    <h3>Git &amp; GitHub</h3>
+                    <p>Version control basics</p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section class="projects section" id="projects">
+
+            <div class="section-heading">
+                <p>MY RECENT WORK</p>
+                <h2>My <span>Projects</span></h2>
+                <p class="heading-description">
+                    Explore my web development projects.
+                </p>
+            </div>
+
+            <div class="projects-grid">
+
+                <article class="project-card">
+                    <div class="project-icon">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-number">PROJECT 01</span>
+                        <h3>D-Mart</h3>
+                        <p>A shopping website with product categories.</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <a href="./Projects/D-mart/index.html"
+                           class="btn project-btn"
+                           target="_blank" rel="noopener noreferrer">
+                            View Project
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-icon">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-number">PROJECT 02</span>
+                        <h3>Ecommerce Shopping</h3>
+                        <p>An e-commerce website with a product layout.</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                        </div>
+                        <a href="./Projects/ecommerce-shopping/index.html"
+                           class="btn project-btn"
+                           target="_blank" rel="noopener noreferrer">
+                            View Project
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-icon">
+                        <i class="fa-solid fa-child-reaching"></i>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-number">PROJECT 03</span>
+                        <h3>Kids Website</h3>
+                        <p>A colorful website designed for children.</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                        </div>
+                        <a href="./Projects/kids%20website/index.html"
+                           class="btn project-btn"
+                           target="_blank" rel="noopener noreferrer">
+                            View Project
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-icon">
+                        <i class="fa-solid fa-dumbbell"></i>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-number">PROJECT 04</span>
+                        <h3>Muscle Blaze</h3>
+                        <p>A fitness-themed website interface.</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <a href="./Projects/muscle%20blaze/index.html"
+                           class="btn project-btn"
+                           target="_blank" rel="noopener noreferrer">
+                            View Project
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-icon">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-number">PROJECT 05</span>
+                        <h3>SevenMentor</h3>
+                        <p>An education and training website project.</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <a href="./Projects/SevenMentor/index.html"
+                           class="btn project-btn"
+                           target="_blank" rel="noopener noreferrer">
+                            View Project
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section class="education section" id="education">
+
+            <div class="section-heading">
+                <p>MY LEARNING JOURNEY</p>
+                <h2>Education &amp; <span>Learning</span></h2>
+            </div>
+
+            <div class="timeline">
+
+                <article class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span>Completed</span>
+                        <h3>Bachelor of Computer Applications (BCA)</h3>
+                        <p>Bachelor's degree in computer applications.</p>
+                    </div>
+                </article>
+
+                <article class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span>Currently Learning</span>
+                        <h3>Python Full Stack Development</h3>
+                        <p>Learning programming and web development skills.</p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="contact section" id="contact">
+
+            <div class="section-heading">
+                <p>LET'S TALK</p>
+                <h2>Contact <span>Me</span></h2>
+                <p class="heading-description">
+                    Have a project or opportunity? Send me a message.
+                </p>
+            </div>
+
+            <div class="contact-wrapper">
+
+                <div class="contact-details">
+                    <h3>Get in Touch</h3>
+
+                    <p class="contact-email-row">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span class="contact-email">
+                            purva7553@gmail.com
+                        </span>
+                    </p>
+
+                    <p>
+                        <i class="fa-solid fa-location-dot"></i>
+                        India
+                    </p>
+                </div>
+
+                <form id="contact-form">
+
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name"
+                           placeholder="Enter your name" required>
+
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email"
+                           placeholder="Enter your email" required>
+
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" rows="5"
+                              placeholder="Write your message" required></textarea>
+
+                    <button type="submit" class="btn">
+                        Send Message
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+
+                    <p id="form-status" class="form-status"
+                       aria-live="polite"></p>
+
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>© <span id="year"></span> Purva Patil. All rights reserved.</p>
+        <a href="#home" aria-label="Back to top">
+            <i class="fa-solid fa-arrow-up"></i>
+        </a>
+    </footer>
+
+    <script src="./index.js"></script>
+</body>
+</html>

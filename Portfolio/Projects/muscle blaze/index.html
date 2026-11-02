@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MuscleBlaze Demo Store</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <div class="offer-bar">FITNESS DEALS | SHOP YOUR FAVOURITES TODAY</div>
+  <header class="main-header">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-6 col-md-3"><a href="#" class="logo">MUSCLEBLAZE</a></div>
+        <div class="col-md-6 order-3 order-md-2 search-row">
+          <form class="search-box" id="searchForm"><input type="search" id="searchInput"
+              placeholder="Search for products..." aria-label="Search products"><button aria-label="Search"><i
+                class="bi bi-search"></i></button></form>
+        </div>
+        <div class="col-6 col-md-3 order-2 order-md-3">
+          <div class="header-icons d-flex justify-content-end gap-3">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#authModal"><i class="bi bi-person"></i> <span
+                id="loginLabel">Login</span></a>
+            <a href="#" onclick="openCart();return false"><i class="bi bi-bag"></i> Cart (<span
+                id="cartCount">0</span>)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <button class="navbar-toggler bg-light my-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+          <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle"
+              data-bs-toggle="dropdown">Protein</a>
+            <ul class="dropdown-menu">
+              <li><a href="#products" class="dropdown-item">Whey Protein</a></li>
+              <li><a href="#products" class="dropdown-item">Whey Isolate</a></li>
+              <li><a href="#products" class="dropdown-item">Plant Protein</a></li>
+              <li><a href="#products" class="dropdown-item">Mass Gainers</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle"
+              data-bs-toggle="dropdown">Workout</a>
+            <ul class="dropdown-menu">
+              <li><a href="#products" class="dropdown-item">Pre Workout</a></li>
+              <li><a href="#products" class="dropdown-item">Creatine</a></li>
+              <li><a href="#products" class="dropdown-item">BCAA</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle"
+              data-bs-toggle="dropdown">Vitamins</a>
+            <ul class="dropdown-menu">
+              <li><a href="#products" class="dropdown-item">Multivitamins</a></li>
+              <li><a href="#products" class="dropdown-item">Fish Oil</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="#categories" class="nav-link">Categories</a></li>
+          <li class="nav-item"><a href="#products" class="nav-link">Best Sellers</a></li>
+          <li class="nav-item"><a href="#footer" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div id="heroSlider" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators"><button type="button" data-bs-target="#heroSlider" data-bs-slide-to="0"
+        class="active" aria-label="Slide 1"></button><button type="button" data-bs-target="#heroSlider"
+        data-bs-slide-to="1" aria-label="Slide 2"></button></div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <section class="hero">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-md-6">
+                <h1>FUEL YOUR <span>FITNESS</span></h1>
+                <p>Discover fitness nutrition and workout essentials in one place.</p><a href="#products"
+                  class="btn shop-btn">SHOP NOW</a>
+              </div>
+              <div class="col-md-6"><img class="hero-img"
+                  src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=80"
+                  alt="Gym fitness"></div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="carousel-item">
+        <section class="hero">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-md-6">
+                <h1>YOUR GOAL.<br><span>YOUR STRENGTH.</span></h1>
+                <p>Explore protein, workout nutrition and fitness essentials.</p><a href="#categories"
+                  class="btn shop-btn">EXPLORE NOW</a>
+              </div>
+              <div class="col-md-6"><img class="hero-img"
+                  src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=900&q=80"
+                  alt="Strength training"></div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div><button class="carousel-control-prev" type="button" data-bs-target="#heroSlider" data-bs-slide="prev"
+      aria-label="Previous"><span class="carousel-control-prev-icon"></span></button><button
+      class="carousel-control-next" type="button" data-bs-target="#heroSlider" data-bs-slide="next"
+      aria-label="Next"><span class="carousel-control-next-icon"></span></button>
+  </div>
+  <section class="py-5" id="categories">
+    <div class="container">
+      <h2 class="section-title">SHOP BY CATEGORY</h2>
+      <div class="row g-3">
+        <div class="col-6 col-md-4 col-lg-3"><a href="#products" class="text-decoration-none text-dark">
+            <div class="category-card"><img
+                src="https://images.unsplash.com/photo-1593095948071-474c5cc2989d?auto=format&fit=crop&w=400&q=80"
+                alt="Protein">
+              <h6>Whey Protein</h6>
+            </div>
+          </a></div>
+        <div class="col-6 col-md-4 col-lg-3"><a href="#products" class="text-decoration-none text-dark">
+            <div class="category-card"><img
+                src="https://images.unsplash.com/photo-1579758629938-03607ccdbaba?auto=format&fit=crop&w=400&q=80"
+                alt="Workout">
+              <h6>Pre Workout</h6>
+            </div>
+          </a></div>
+        <div class="col-6 col-md-4 col-lg-3"><a href="#products" class="text-decoration-none text-dark">
+            <div class="category-card"><img
+                src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=400&q=80"
+                alt="Fitness">
+              <h6>Creatine</h6>
+            </div>
+          </a></div>
+        <div class="col-6 col-md-4 col-lg-3"><a href="#products" class="text-decoration-none text-dark">
+            <div class="category-card"><img
+                src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=400&q=80"
+                alt="Wellness">
+              <h6>Health & Wellness</h6>
+            </div>
+          </a></div>
+      </div>
+    </div>
+  </section>
+  <section class="py-5 bg-light" id="products">
+    <div class="container">
+      <h2 class="section-title">BEST SELLERS</h2>
+      <div class="row g-3" id="productList"></div>
+      <p id="noProducts" class="text-center mt-4 d-none">No products found.</p>
+    </div>
+  </section>
+  <section class="promo-section">
+    <div class="container">
+      <h2>READY TO REACH YOUR FITNESS GOALS?</h2>
+      <p class="mt-3">Explore fitness nutrition and find your favourites.</p><a href="#products"
+        class="btn shop-btn mt-2">SHOP NOW</a>
+    </div>
+  </section>
+  <footer id="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-md-4">
+          <h5 class="logo">MUSCLEBLAZE</h5>
+          <p class="text-secondary mt-3">Your fitness store for workout nutrition and fitness essentials.</p>
+        </div>
+        <div class="col-6 col-md-4">
+          <h6 class="footer-title">QUICK LINKS</h6><a href="#">Home</a><a href="#categories">Categories</a><a
+            href="#products">Best Sellers</a>
+        </div>
+        <div class="col-6 col-md-4">
+          <h6 class="footer-title">CUSTOMER SUPPORT</h6><a href="#">Contact Us</a><a href="#">FAQs</a><a
+            href="#">Shipping Policy</a><a href="#">Privacy Policy</a>
+        </div>
+      </div>
+      <hr class="border-secondary">
+      <p class="text-center text-secondary mb-0">© 2026 Fitness Store Demo. Student Practice Project.</p>
+    </div>
+  </footer>
+
+  <!-- Login/Register Modal -->
+  <div class="modal fade" id="authModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="authTitle">Login</h5><button type="button" class="btn-close"
+            data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="authMessage" class="alert alert-info d-none"></div>
+          <form id="authForm">
+            <div class="mb-3" id="nameGroup"><label class="form-label" for="authName">Full name</label><input
+                class="form-control" id="authName" autocomplete="name" required></div>
+            <div class="mb-3"><label class="form-label" for="authEmail">Email</label><input type="email"
+                class="form-control" id="authEmail" autocomplete="email" required></div>
+            <div class="mb-3"><label class="form-label" for="authPassword">Password</label><input type="password"
+                class="form-control" id="authPassword" minlength="6" autocomplete="current-password" required></div>
+            <button class="btn shop-btn w-100" id="authSubmit">Login</button>
+          </form>
+          <p class="mt-3 mb-0 text-center"><span id="authSwitchText">New customer?</span> <a href="#"
+              id="authSwitch">Create an account</a></p>
+          <p class="small-note mt-3 mb-0">Demo only: account information is stored in this browser and is not sent to a
+            server.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Modal -->
+  <div class="modal fade" id="cartModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Your Shopping Cart</h5><button type="button" class="btn-close" data-bs-dismiss="modal"
+            aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="cartItems"></div>
+          <div class="d-flex justify-content-between mt-3 total-line"><span>Total</span><span id="cartTotal">₹0</span>
+          </div>
+        </div>
+        <div class="modal-footer"><button class="btn btn-outline-secondary" data-bs-dismiss="modal">Continue
+            Shopping</button><button class="btn shop-btn" onclick="startCheckout()">Proceed to Checkout</button></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkout Modal -->
+  <div class="modal fade" id="checkoutModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Checkout</h5><button type="button" class="btn-close" data-bs-dismiss="modal"
+            aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="checkoutMessage" class="alert alert-warning d-none"></div>
+          <form id="checkoutForm">
+            <div class="row g-3">
+              <div class="col-md-6"><label class="form-label" for="customerName">Full name</label><input
+                  class="form-control" id="customerName" required autocomplete="name"></div>
+              <div class="col-md-6"><label class="form-label" for="customerPhone">Mobile number</label><input
+                  class="form-control" id="customerPhone" required pattern="[6-9][0-9]{9}" maxlength="10"
+                  inputmode="numeric" placeholder="10-digit mobile number"></div>
+              <div class="col-12"><label class="form-label" for="customerEmail">Email address</label><input type="email"
+                  class="form-control" id="customerEmail" required autocomplete="email"></div>
+              <div class="col-12"><label class="form-label" for="customerAddress">Delivery address</label><textarea
+                  class="form-control" id="customerAddress" rows="3" required autocomplete="street-address"></textarea>
+              </div>
+              <div class="col-md-6"><label class="form-label" for="customerCity">City</label><input class="form-control"
+                  id="customerCity" required autocomplete="address-level2"></div>
+              <div class="col-md-6"><label class="form-label" for="customerPin">PIN code</label><input
+                  class="form-control" id="customerPin" required pattern="[0-9]{6}" maxlength="6" inputmode="numeric"
+                  autocomplete="postal-code"></div>
+              <div class="col-12"><label class="form-label">Payment method</label>
+                <div class="form-check border rounded p-3 ps-5 mb-2"><input class="form-check-input" type="radio"
+                    name="paymentMethod" id="payCOD" value="COD" checked><label class="form-check-label"
+                    for="payCOD"><strong>Cash on Delivery</strong><br><small>Pay when your order
+                      arrives.</small></label></div>
+                <div class="form-check border rounded p-3 ps-5"><input class="form-check-input" type="radio"
+                    name="paymentMethod" id="payDemo" value="DEMO"><label class="form-check-label"
+                    for="payDemo"><strong>Demo Online Payment</strong><br><small>Simulates a payment only. No real money
+                      is charged.</small></label></div>
+              </div>
+              <div class="col-12">
+                <div class="d-flex justify-content-between total-line"><span>Order total</span><span
+                    id="checkoutTotal">₹0</span></div>
+              </div>
+              <div class="col-12"><button class="btn shop-btn w-100" id="placeOrderBtn" type="submit">Place
+                  Order</button>
+                <p class="small-note mt-2 mb-0">This training project does not process real payments or create a real
+                  shipment.</p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Order Confirmation Modal -->
+  <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-center p-3">
+        <div class="modal-body">
+          <div class="display-4 text-success"><i class="bi bi-check-circle"></i></div>
+          <h4 class="mt-2">Order placed!</h4>
+          <p id="successText"></p>
+          <p class="small-note">This is a demo confirmation only, not a real payment receipt.</p><button
+            class="btn shop-btn" data-bs-dismiss="modal">Continue Shopping</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const products = [
+      { id: 1, name: "Whey Protein Powder", price: 1999, mrp: 2499, discount: "20% OFF", image: "https://images.unsplash.com/photo-1593095948071-474c5cc2989d?auto=format&fit=crop&w=400&q=80", rating: "★★★★☆ (4.5)" },
+      { id: 2, name: "Pre Workout Formula", price: 999, mrp: 1199, discount: "15% OFF", image: "https://images.unsplash.com/photo-1579758629938-03607ccdbaba?auto=format&fit=crop&w=400&q=80", rating: "★★★★☆ (4.3)" },
+      { id: 3, name: "Creatine Monohydrate", price: 899, mrp: 999, discount: "10% OFF", image: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=400&q=80", rating: "★★★★★ (4.7)" },
+      { id: 4, name: "Daily Health Supplements", price: 599, mrp: 729, discount: "18% OFF", image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=400&q=80", rating: "★★★★☆ (4.4)" },
+      { id: 5, name: "Biozyme Performance Whey", price: 3799, mrp: 4999, discount: "24% OFF", image: "https://images.unsplash.com/photo-1593095948071-474c5cc2989d?auto=format&fit=crop&w=400&q=80", rating: "★★★★★ (4.5)" },
+      { id: 6, name: "Mass Gainer Chocolate", price: 2899, mrp: 3299, discount: "12% OFF", image: "https://images.unsplash.com/photo-1579758629938-03607ccdbaba?auto=format&fit=crop&w=400&q=80", rating: "★★★★☆ (4.3)" },
+      { id: 7, name: "High Protein Oats", price: 569, mrp: 699, discount: "18% OFF", image: "https://images.unsplash.com/photo-1517673132405-a56a62b18caf?auto=format&fit=crop&w=400&q=80", rating: "★★★★☆ (4.4)" },
+      { id: 8, name: "Protein Peanut Butter", price: 599, mrp: 749, discount: "20% OFF", image: "https://images.unsplash.com/photo-1587049352851-8d4e89133924?auto=format&fit=crop&w=400&q=80", rating: "★★★★☆ (4.5)" },
+      { id: 9, name: "Protein Energy Bars", price: 675, mrp: 780, discount: "13% OFF", image: "https://images.unsplash.com/photo-1622484212850-eb596d769edc?auto=format&fit=crop&w=400&q=80", rating: "★★★★☆ (4.2)" },
+      { id: 10, name: "Omega 3 Fish Oil", price: 719, mrp: 779, discount: "7% OFF", image: "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?auto=format&fit=crop&w=400&q=80", rating: "★★★★☆ (4.4)" },
+      { id: 11, name: "BCAA Pro Amino Acids", price: 899, mrp: 1099, discount: "18% OFF", image: "https://images.unsplash.com/photo-1579758629938-03607ccdbaba?auto=format&fit=crop&w=400&q=80", rating: "★★★★☆ (4.2)" },
+      { id: 12, name: "Whey Protein Isolate", price: 5499, mrp: 6499, discount: "15% OFF", image: "https://images.unsplash.com/photo-1593095948071-474c5cc2989d?auto=format&fit=crop&w=400&q=80", rating: "★★★★★ (4.5)" },
+      { id: 13, name: "Daily Multivitamin", price: 529, mrp: 649, discount: "18% OFF", image: "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?auto=format&fit=crop&w=400&q=80", rating: "★★★★☆ (4.6)" },
+      { id: 14, name: "Electrolyte Hydration Mix", price: 499, mrp: 599, discount: "17% OFF", image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=400&q=80", rating: "★★★★☆ (4.3)" },
+      { id: 15, name: "Fitness Shaker Bottle", price: 299, mrp: 399, discount: "25% OFF", image: "https://images.unsplash.com/photo-1526401485004-2aa7f3c3d1b4?auto=format&fit=crop&w=400&q=80", rating: "★★★★☆ (4.1)" },
+      { id: 16, name: "Super Gainer XXL", price: 4449, mrp: 4899, discount: "9% OFF", image: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=400&q=80", rating: "★★★★☆ (4.3)" }
+    ];
+    let cart = JSON.parse(localStorage.getItem("fitnessCart") || "[]");
+    let loggedInUser = JSON.parse(localStorage.getItem("fitnessUser") || "null");
+    let authMode = "login";
+
+    function money(amount) { return "₹" + amount.toLocaleString("en-IN"); }
+    function saveCart() { localStorage.setItem("fitnessCart", JSON.stringify(cart)); updateCartCount(); }
+    function updateCartCount() { document.getElementById("cartCount").textContent = cart.reduce((sum, item) => sum + item.qty, 0); }
+    function renderProducts(list = products) {
+      const productList = document.getElementById("productList");
+      productList.innerHTML = "";
+      list.forEach(product => {
+        productList.innerHTML += `<div class="col-6 col-md-4 col-lg-3 product-item"><div class="product-card"><span class="discount">${product.discount}</span><img src="${product.image}" alt="${product.name}"><h6>${product.name}</h6><p class="mb-1">${product.rating}</p><p class="mb-0"><span class="price">${money(product.price)}</span> <span class="old-price">${money(product.mrp)}</span></p><button class="add-btn" onclick="addToCart(${product.id})">ADD TO CART</button></div></div>`;
+      });
+      document.getElementById("noProducts").classList.toggle("d-none", list.length > 0);
+    }
+    function addToCart(id) {
+      const product = products.find(item => item.id === id);
+      const existing = cart.find(item => item.id === id);
+      if (existing) { existing.qty++; } else { cart.push({ ...product, qty: 1 }); }
+      saveCart();
+    }
+    function changeQty(id, amount) {
+      const item = cart.find(product => product.id === id);
+      if (!item) return;
+      item.qty += amount;
+      if (item.qty <= 0) cart = cart.filter(product => product.id !== id);
+      saveCart(); renderCart();
+    }
+    function removeItem(id) { cart = cart.filter(product => product.id !== id); saveCart(); renderCart(); }
+    function cartSum() { return cart.reduce((sum, item) => sum + item.price * item.qty, 0); }
+    function renderCart() {
+      const box = document.getElementById("cartItems");
+      if (cart.length === 0) { box.innerHTML = '<p class="text-center py-4">Your cart is empty. Add a product to continue.</p>'; }
+      else {
+        box.innerHTML = cart.map(item => `<div class="cart-row row align-items-center g-2"><div class="col-5"><strong>${item.name}</strong><div class="small-note">${money(item.price)} each</div></div><div class="col-4 d-flex align-items-center gap-2"><button class="qty-btn" onclick="changeQty(${item.id},-1)" aria-label="Decrease quantity">−</button><span>${item.qty}</span><button class="qty-btn" onclick="changeQty(${item.id},1)" aria-label="Increase quantity">+</button></div><div class="col-3 text-end"><strong>${money(item.price * item.qty)}</strong><button class="btn btn-sm text-danger d-block ms-auto" onclick="removeItem(${item.id})">Remove</button></div></div>`).join("");
+      }
+      document.getElementById("cartTotal").textContent = money(cartSum());
+    }
+    function openCart() { renderCart(); bootstrap.Modal.getOrCreateInstance(document.getElementById("cartModal")).show(); }
+    function startCheckout() {
+      if (cart.length === 0) { alert("Your cart is empty. Please add a product first."); return; }
+      bootstrap.Modal.getOrCreateInstance(document.getElementById("cartModal")).hide();
+      document.getElementById("checkoutTotal").textContent = money(cartSum());
+      if (loggedInUser) { document.getElementById("customerName").value = loggedInUser.name || ""; document.getElementById("customerEmail").value = loggedInUser.email || ""; }
+      bootstrap.Modal.getOrCreateInstance(document.getElementById("checkoutModal")).show();
+    }
+    function setAuthMode(mode) {
+      authMode = mode;
+      document.getElementById("authTitle").textContent = mode === "login" ? "Login" : "Create Account";
+      document.getElementById("authSubmit").textContent = mode === "login" ? "Login" : "Register";
+      document.getElementById("nameGroup").classList.toggle("d-none", mode === "login");
+      document.getElementById("authName").required = mode === "register";
+      document.getElementById("authPassword").autocomplete = mode === "login" ? "current-password" : "new-password";
+      document.getElementById("authSwitchText").textContent = mode === "login" ? "New customer?" : "Already registered?";
+      document.getElementById("authSwitch").textContent = mode === "login" ? "Create an account" : "Login";
+      document.getElementById("authMessage").classList.add("d-none");
+    }
+    document.getElementById("authSwitch").addEventListener("click", event => { event.preventDefault(); setAuthMode(authMode === "login" ? "register" : "login"); });
+    document.getElementById("authForm").addEventListener("submit", event => {
+      event.preventDefault();
+      const name = document.getElementById("authName").value.trim();
+      const email = document.getElementById("authEmail").value.trim().toLowerCase();
+      const password = document.getElementById("authPassword").value;
+      const users = JSON.parse(localStorage.getItem("fitnessUsers") || "[]");
+      const message = document.getElementById("authMessage");
+      if (authMode === "register") {
+        if (users.some(user => user.email === email)) { message.textContent = "This email is already registered in this demo. Please login."; message.classList.remove("d-none"); return; }
+        users.push({ name, email, password });
+        localStorage.setItem("fitnessUsers", JSON.stringify(users));
+        loggedInUser = { name, email }; localStorage.setItem("fitnessUser", JSON.stringify(loggedInUser));
+      } else {
+        const user = users.find(user => user.email === email && user.password === password);
+        if (!user) { message.textContent = "Email or password is incorrect, or you have not registered yet."; message.classList.remove("d-none"); return; }
+        loggedInUser = { name: user.name, email: user.email }; localStorage.setItem("fitnessUser", JSON.stringify(loggedInUser));
+      }
+      updateLoginLabel();
+      bootstrap.Modal.getOrCreateInstance(document.getElementById("authModal")).hide();
+      document.getElementById("authForm").reset(); setAuthMode("login");
+      alert("Demo login successful.");
+    });
+    function updateLoginLabel() { document.getElementById("loginLabel").textContent = loggedInUser ? loggedInUser.name.split(" ")[0] : "Login"; }
+    document.getElementById("checkoutForm").addEventListener("submit", event => {
+      event.preventDefault();
+      if (cart.length === 0) { alert("Your cart is empty."); return; }
+      const method = document.querySelector('input[name="paymentMethod"]:checked').value;
+      const orderNumber = "MB" + Date.now().toString().slice(-8);
+      const order = { orderNumber, items: cart.map(item => ({ name: item.name, qty: item.qty, price: item.price })), total: cartSum(), paymentMethod: method, date: new Date().toISOString() };
+      const orders = JSON.parse(localStorage.getItem("fitnessOrders") || "[]");
+      orders.push(order); localStorage.setItem("fitnessOrders", JSON.stringify(orders));
+      let paymentText = method === "COD" ? "Payment method: Cash on Delivery." : "Demo online payment selected: simulated only; no money was charged.";
+      document.getElementById("successText").innerHTML = `Order number: <strong>${orderNumber}</strong><br>Total: <strong>${money(order.total)}</strong><br>${paymentText}`;
+      cart = []; saveCart(); document.getElementById("checkoutForm").reset();
+      bootstrap.Modal.getOrCreateInstance(document.getElementById("checkoutModal")).hide();
+      bootstrap.Modal.getOrCreateInstance(document.getElementById("successModal")).show();
+    });
+    document.getElementById("searchForm").addEventListener("submit", event => {
+      event.preventDefault();
+      const term = document.getElementById("searchInput").value.trim().toLowerCase();
+      renderProducts(products.filter(product => product.name.toLowerCase().includes(term)));
+      document.getElementById("products").scrollIntoView({ behavior: "smooth" });
+    });
+    renderProducts(); updateCartCount(); updateLoginLabel(); setAuthMode("login");
+  </script>
+</body>
+
+</html> 

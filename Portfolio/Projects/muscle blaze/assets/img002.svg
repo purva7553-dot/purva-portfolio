@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="63.999" height="63.999" viewBox="0 0 63.999 63.999">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_14655" data-name="Rectangle 14655" width="63.999" height="63.999" rx="32" fill="#fff" stroke="rgba(255,255,255,0)" stroke-width="1"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#58595b"/>
+      <stop offset="1"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_97927" data-name="Group 97927" transform="translate(-0.001 -0.001)">
+    <g id="Group_97926" data-name="Group 97926">
+      <g id="Group_97925" data-name="Group 97925" transform="translate(0.001 0.001)">
+        <g id="Mask_Group_1215" data-name="Mask Group 1215" transform="translate(0 0)" clip-path="url(#clip-path)">
+          <path id="Path_146199" data-name="Path 146199" d="M0,20H147.69V140.249H0Z" transform="translate(-11.489 -48.292)" fill="url(#linear-gradient)"/>
+        </g>
+      </g>
+    </g>
+    <g id="noun-category-5410209" transform="translate(19.105 19.606)">
+      <path id="Path_108676" data-name="Path 108676" d="M117.92,46.668a1.252,1.252,0,0,0-1.252,1.252v8.762a1.252,1.252,0,0,0,1.252,1.252h8.762a1.252,1.252,0,0,0,1.252-1.252V47.92a1.252,1.252,0,0,0-1.252-1.252Z" transform="translate(-116.668 -46.668)" fill="#ffbe00" stroke="#272e35" stroke-width="0.6" fill-rule="evenodd"/>
+      <path id="Path_108677" data-name="Path 108677" d="M117.92,303.33a1.252,1.252,0,0,0-1.252,1.252v8.762a1.252,1.252,0,0,0,1.252,1.252h8.762a1.252,1.252,0,0,0,1.252-1.252v-8.762a1.252,1.252,0,0,0-1.252-1.252Z" transform="translate(-116.668 -289.807)" fill="#ffbe00" stroke="#272e35" stroke-width="0.6" fill-rule="evenodd"/>
+      <path id="Path_108678" data-name="Path 108678" d="M373.33,52.3a5.633,5.633,0,1,1,5.633,5.633h-4.381a1.252,1.252,0,0,1-1.252-1.252Z" transform="translate(-358.807 -46.67)" fill="#ffbe00" stroke="#272e35" stroke-width="0.6" fill-rule="evenodd"/>
+      <path id="Path_108679" data-name="Path 108679" d="M374.586,303.33a1.252,1.252,0,0,0-1.252,1.252v8.762a1.252,1.252,0,0,0,1.252,1.252h8.762a1.252,1.252,0,0,0,1.252-1.252v-8.762a1.252,1.252,0,0,0-1.252-1.252Z" transform="translate(-358.811 -289.807)" fill="#ffbe00" stroke="#272e35" stroke-width="0.6" fill-rule="evenodd"/>
+    </g>
+  </g>
+</svg>
